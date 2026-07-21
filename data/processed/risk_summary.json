@@ -1,0 +1,65 @@
+{
+  "currency": "Rs",
+  "skus_scored": 197,
+  "quadrant_counts": {
+    "Healthy": 93,
+    "Markdown / clear": 88,
+    "Reorder now": 16
+  },
+  "sales_at_risk_stockout": 17931.0,
+  "capital_locked_overstock": 372519.0,
+  "top_reorder": [
+    {
+      "sku_id": "40016",
+      "description": "CHINESE DRAGON PAPER LANTERNS",
+      "value_at_stake": 3539.0
+    },
+    {
+      "sku_id": "23203",
+      "description": "JUMBO BAG VINTAGE DOILY",
+      "value_at_stake": 2840.0
+    },
+    {
+      "sku_id": "22149",
+      "description": "FELTCRAFT 6 FLOWER FRIENDS",
+      "value_at_stake": 2742.0
+    },
+    {
+      "sku_id": "85152",
+      "description": "HAND OVER THE CHOCOLATE   SIGN",
+      "value_at_stake": 1913.0
+    },
+    {
+      "sku_id": "22866",
+      "description": "HAND WARMER SCOTTY DOG DESIGN",
+      "value_at_stake": 1575.0
+    }
+  ],
+  "top_markdown": [
+    {
+      "sku_id": "85099B",
+      "description": "JUMBO BAG RED RETROSPOT",
+      "value_at_stake": 29036.0
+    },
+    {
+      "sku_id": "21137",
+      "description": "BLACK RECORD COVER FRAME",
+      "value_at_stake": 24143.0
+    },
+    {
+      "sku_id": "22910",
+      "description": "PAPER CHAIN KIT VINTAGE CHRISTMAS",
+      "value_at_stake": 23493.0
+    },
+    {
+      "sku_id": "22423",
+      "description": "REGENCY CAKESTAND 3 TIER",
+      "value_at_stake": 23357.0
+    },
+    {
+      "sku_id": "21915",
+      "description": "RED  HARMONICA IN BOX",
+      "value_at_stake": 13189.0
+    }
+  ]
+}

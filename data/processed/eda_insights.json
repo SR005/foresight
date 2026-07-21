@@ -1,0 +1,13 @@
+{
+  "total_units": 11187647,
+  "distinct_skus_all": 4730,
+  "modelled_skus": 197,
+  "top20pct_volume_share": 0.775,
+  "nov_dec_volume_share": 0.229,
+  "dead_stock_skus_last8w": 12,
+  "quadrant_counts": {
+    "Healthy": 93,
+    "Markdown / clear": 88,
+    "Reorder now": 16
+  }
+}

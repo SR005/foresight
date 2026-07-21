@@ -1,0 +1,19 @@
+# raw + large dumps (do not commit)
+data/raw/*.xlsx
+data/raw/*.parquet
+data/processed/sales_daily.csv
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# keep the small processed outputs the hosted app needs:
+#   forecast.csv, risk_scores.csv, weekly_panel.csv, *.json
+
+# editor / office temp & lock files
+reports/~$*
+reports/.~lock.*#
+reports/*.tmp
+~$*
+.~lock.*#
+*.tmp

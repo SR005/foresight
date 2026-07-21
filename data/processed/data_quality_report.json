@@ -1,0 +1,54 @@
+{
+  "rows_raw": {
+    "value": 1067371,
+    "note": "Combined transaction rows before cleaning."
+  },
+  "cancellations_removed": {
+    "value": 19494,
+    "note": "Invoices prefixed 'C' are cancellations/returns \u2014 excluded from demand."
+  },
+  "non_product_rows_removed": {
+    "value": 4676,
+    "note": "Fees/postage/adjustment codes and non-numeric codes are not sellable SKUs."
+  },
+  "missing_field_rows_removed": {
+    "value": 0,
+    "note": "Rows missing date, quantity, price or SKU cannot be used and are dropped."
+  },
+  "non_positive_rows_removed": {
+    "value": 6166,
+    "note": "Quantity<=0 or price<=0 are returns/adjustments/freebies, not demand."
+  },
+  "duplicate_rows_removed": {
+    "value": 33666,
+    "note": "Identical invoice/SKU/time/qty/price lines are double-scans \u2014 de-duplicated."
+  },
+  "rows_clean": {
+    "value": 1003369,
+    "note": "Retained 94.0% of raw rows after cleaning."
+  },
+  "date_min": {
+    "value": "2009-12-01",
+    "note": "Earliest transaction date."
+  },
+  "date_max": {
+    "value": "2011-12-09",
+    "note": "Latest transaction date."
+  },
+  "distinct_skus": {
+    "value": 4728,
+    "note": "Distinct sellable SKUs."
+  },
+  "skus_modelled": {
+    "value": 200,
+    "note": "Forecast scope = top 200 SKUs by volume (the active assortment)."
+  },
+  "skus_after_min_history": {
+    "value": 197,
+    "note": "SKUs with >= 30 weeks of history kept for modelling."
+  },
+  "inventory_snapshots_modelled": {
+    "value": 4728,
+    "note": "Raw extract has no stock table; inventory snapshot synthesised from demand (seeded)."
+  }
+}

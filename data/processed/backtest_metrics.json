@@ -1,0 +1,17 @@
+{
+  "n_test_points": 1576,
+  "n_origins": 8,
+  "model": {
+    "WAPE": 0.5633,
+    "MAPE": 1.9445,
+    "bias": -10.998
+  },
+  "seasonal_naive": {
+    "WAPE": 0.8906,
+    "MAPE": 2.8925,
+    "bias": 75.072
+  },
+  "wape_improvement_abs": 0.3272,
+  "wape_improvement_pct": 36.7,
+  "model_beats_baseline": true
+}
