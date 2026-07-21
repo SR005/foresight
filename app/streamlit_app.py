@@ -232,12 +232,27 @@ def main():
         if hist.empty:
             st.info("No history for this SKU.")
         else:
-            chart = pd.concat([
-                hist[["week_start", "units_sold"]].rename(columns={"units_sold": "Actual"}),
-                f[["week_start", "forecast"]].rename(columns={"forecast": "Forecast"}),
-                f[["week_start", "baseline"]].rename(columns={"baseline": "Baseline"}),
-            ]).set_index("week_start")
+            # Show the most recent ~26 weeks of actuals so the 8-week forecast is
+            # proportionally visible next to it.
+            h = (hist[["week_start", "units_sold"]]
+                 .rename(columns={"units_sold": "Actual"}).tail(26))
+            ff = (f[["week_start", "forecast", "baseline"]]
+                  .rename(columns={"forecast": "Forecast", "baseline": "Baseline"}))
+            # Bridge: anchor Forecast & Baseline at the last actual point so both
+            # lines visibly continue from history instead of floating at the edge.
+            if not h.empty:
+                last_wk = h["week_start"].iloc[-1]
+                last_val = float(h["Actual"].iloc[-1])
+                bridge = pd.DataFrame({"week_start": [last_wk],
+                                       "Forecast": [last_val],
+                                       "Baseline": [last_val]})
+                ff = pd.concat([bridge, ff], ignore_index=True)
+            chart = (h.merge(ff, on="week_start", how="outer")
+                       .sort_values("week_start")
+                       .set_index("week_start")[["Actual", "Forecast", "Baseline"]])
             st.line_chart(chart, height=330, color=["#0f172a", "#6366F1", "#F59E0B"])
+            st.caption("Black = actual history · indigo = model forecast · "
+                       "amber = seasonal-naive baseline (next 8 weeks).")
         st.markdown("</div>", unsafe_allow_html=True)
     with cc2:
         st.markdown("<div class='card'>", unsafe_allow_html=True)
